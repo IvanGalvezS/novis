@@ -6,6 +6,7 @@ import { CompanyComponent } from './company.component';
 import { CompanyListComponent } from './company-list/company-list.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTabsModule } from '@angular/material/tabs';
 import { CompanyDetailComponent } from './company-detail/company-detail.component';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CompanyDetailComponent } from './company-detail/company-detail.componen
     CommonModule,
     CompanyRoutingModule,
     MatTableModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTabsModule,
 
   ]
 })

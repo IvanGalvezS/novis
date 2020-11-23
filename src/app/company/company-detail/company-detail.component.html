@@ -4,6 +4,22 @@
         <p>{{company.sname}}</p>
     </div>
     <div class="card-body">
+        <mat-tab-group>
+            <mat-tab label="Dasboard">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row mt-2">
+                            <div class="col-sm">
 
+                            </div>
+                            <div class="col-sm">
+                                <canvas #line2>{{chart2}}</canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Landscape"> Content 2 </mat-tab>
+        </mat-tab-group>
     </div>
 </div>
