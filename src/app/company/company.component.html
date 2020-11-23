@@ -1,0 +1,2 @@
+<app-company-list *ngIf="component === 'list'" (component)="onChangeComponent($event)"></app-company-list>
+<app-company-detail *ngIf="component === 'detail'" [company]="company"></app-company-detail>

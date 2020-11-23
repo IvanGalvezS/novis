@@ -1,0 +1,35 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+export interface Company {
+  id: string;
+  name: string;
+  code: string;
+  cloud: string;
+  sname: string;
+  status: number;
+}
+@Injectable({
+  providedIn: 'root'
+})
+export class CompanyService {
+
+  constructor() { }
+
+
+  getCompanies() {
+    const companies: Company[] = [
+      {id: '1ccedd', name: 'Empresas Test JML-JM1', code: 'JM1', cloud: 'aws2', sname: 'jymmy', status:1},
+      {id: '2ccedd', name: 'Empresas Fertinal', code: 'FER', cloud: 'google', sname: 'Fertinal', status:2},
+      {id: '3ccedd', name: 'Empresas Casa & ideas S.A.', code: 'CEI', cloud: 'aws2', sname: 'Casa&ideas', status:3},
+    ]
+    return companies;
+  }
+
+  companyDetail(company: Company): Observable<Company> {
+    const observableCompany: Observable<Company> = new Observable((observer) => {
+      observer.next(company);
+      observer.complete();
+    })
+    return observableCompany;
+  }
+}
