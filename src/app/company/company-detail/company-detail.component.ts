@@ -10,9 +10,16 @@ import {Chart} from 'chart.js';
 })
 export class CompanyDetailComponent implements OnInit, AfterViewInit {
   @Input() company: Company;
+  
+  chart1: any;
   chart2: any;
-
+  chart3: any;
+  chart4: any;
+  
+  @ViewChild('line1') line1;
   @ViewChild('line2') line2;
+  @ViewChild('line3') line3;
+  @ViewChild('line4') line4;
 
   constructor() { }
 
@@ -26,13 +33,90 @@ export class CompanyDetailComponent implements OnInit, AfterViewInit {
   }
 
   displayChart() {
-    this.chart2 = new Chart(this.line2.nativeElement,{
+    this.chart1 = new Chart(this.line1.nativeElement,{
       type: 'line',
+      options: {responsive: true} ,
       data: {
-        labels: ['09:00', '10:00', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December'],
+        labels: ['00:00', '02:00', '04:00','06:00','08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'],
         datasets: [
           {
             label: 'Estimated Charged',
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: 'rgba(255,0,0,1)',
+            borderColor: 'rgba(75,192,192,1)',
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: 'rgba(75,192,192,1)',
+            pointBackgroundColor: '#fff',
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+            pointHoverBorderColor: 'rgba(220,220,220,1)',
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [10, 40, 30, 25, 65, 80, 40, 20, 60, 50, 60, 15],
+            spanGaps: false,
+          }
+        ]
+      }
+    } );
+    this.chart2 = new Chart(this.line2.nativeElement,{
+      type: 'line',
+      options: {responsive: true} ,
+      data: {
+        labels: ['00:00', '02:00', '04:00','06:00','08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'],
+        datasets: [
+          {
+            label: 'Instance Status Failed',
+            fill: false,
+            borderColor: "#FF0000",
+            borderDash: [5, 5],
+            backgroundColor: "#FF0000",
+            pointBackgroundColor: "#55bae7",
+            pointBorderColor: "#55bae7",
+            pointHoverBackgroundColor: "#55bae7",
+            pointHoverBorderColor: "#55bae7",
+            data: [0, 60, 80, 70, 80, 40, 55, 90, 75, 60, 55, 40],
+            spanGaps: false,
+          }
+        ]
+      }
+    } );
+    this.chart3 = new Chart(this.line3.nativeElement,{
+      type: 'line',
+      options: {responsive: true} ,
+      data: {
+        labels: ['00:00', '02:00', '04:00','06:00','08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'],
+        datasets: [
+          {
+            label: 'vCpu Count',
+            fill: false,
+            lineTension: 0.1,
+            borderColor: "#FF0000",
+            borderDash: [5, 5],
+            backgroundColor: "#FF0000",
+            pointBackgroundColor: "#55bae7",
+            pointBorderColor: "#55bae7",
+            pointHoverBackgroundColor: "#55bae7",
+            pointHoverBorderColor: "#55bae7",
+            data: [0, 50, 80, 81, 56, 55, 40, 60, 85, 90, 95, 60],
+            spanGaps: false,
+          }
+        ]
+      }
+    } );
+    this.chart4 = new Chart(this.line4.nativeElement,{
+      type: 'line',
+      options: {responsive: true} ,
+      data: {
+        labels: ['00:00', '02:00', '04:00','06:00','08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'],
+        datasets: [
+          {
+            label: 'EBS Burts Balance',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',
@@ -55,7 +139,7 @@ export class CompanyDetailComponent implements OnInit, AfterViewInit {
           }
         ]
       }
-    } )
+    } );
   }
 
 }

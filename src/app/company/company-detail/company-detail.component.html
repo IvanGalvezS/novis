@@ -7,13 +7,64 @@
         <mat-tab-group>
             <mat-tab label="Dasboard">
                 <div class="card">
+                    <div class="card-header">
+                        <h1 class="card-title">Billing</h1>
+                    </div>
                     <div class="card-body">
-                        <div class="row mt-2">
-                            <div class="col-sm">
-
+                        <div class="row row-chart">
+                            <div class="col-sm-4">
+                                <div class="card card-graf">
+                                    <div class="card-body">
+                                        <h1 class="card-title">EstimatedCharges</h1>
+                                        <h1>4.58K</h1>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm">
-                                <canvas #line2>{{chart2}}</canvas>
+                            <div class="col-sm-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <canvas style="height:  20vmax;width: 100vmax;" #line1>{{chart1}}</canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="card-title">Processing</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-chart">
+                            <div class="col-sm-6">
+                                <div class="card card-graf">
+                                    <div class="card-body">
+                                        <canvas style="height:  20vmax;width: 100vmax;" #line2>{{chart2}}</canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card card-graf">
+                                    <div class="card-body">
+                                        <canvas style="height:  20vmax;width: 100vmax;" #line3>{{chart3}}</canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="card-title">Storage</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-chart">
+                            <div class="col-sm-12">
+                                <div class="card card-graf">
+                                    <div class="card-body">
+                                        <canvas style="height:  10vmax;width: 100vmax;" #line4>{{chart4}}</canvas>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
