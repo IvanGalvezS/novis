@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Company, CompanyService, System } from '../company/service/company.service';
-interface Food {
-  value: string;
-  viewValue: string;
-}
+import { SolutionService, Enviroment, Solution } from './service/solution.service';
 
 @Component({
   selector: 'app-solution',
@@ -11,21 +8,39 @@ interface Food {
   styleUrls: ['./solution.component.css']
 })
 export class SolutionComponent implements OnInit {
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+
   companies: Company[] = [];
   systems: System[] = [];
-  constructor(private companyService: CompanyService) { }
+  environments: Enviroment[] = [];
+  solutions: Solution[] = [];
+  prs: string[] = ['PR8-DB', 'PR8-ACS', 'PR8-DI'];
+  addForm = false;
+  constructor(private companyService: CompanyService, private solutionService: SolutionService) { }
 
   ngOnInit(): void {
     this.getCompany();
+    this.getEnviroments();
+    this.getSolutions();
   }
 
   getCompany() {
     this.companies = this.companyService.getCompanies();
+  }
+  getEnviroments() {
+    this.environments = this.solutionService.getEnviroments();
+  }
+  getSolutions() {
+    this.solutions = this.solutionService.getSolutions();
+  }
+
+  selectCompany(company: Company) {
+    console.log(company);
+    this.systems = company.systems;
+    console.log(this.systems);
+  }
+
+  showForm() {
+    this.addForm = true;
   }
 
 }

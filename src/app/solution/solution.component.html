@@ -7,8 +7,8 @@
             <div class="col-sm-4">
                 <mat-form-field style="width: 100%;" appearance="outline">
                     <mat-label>Company</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let company of companies" [value]="company.id">
+                    <mat-select (selectionChange)="selectCompany($event.value)">
+                        <mat-option *ngFor="let company of companies" [value]="company">
                             {{company.name}}
                         </mat-option>
                     </mat-select>
@@ -18,8 +18,8 @@
                 <mat-form-field style="width: 100%;" appearance="outline">
                     <mat-label>Environment</mat-label>
                     <mat-select>
-                        <mat-option *ngFor="let food of foods" [value]="food.value">
-                            {{food.viewValue}}
+                        <mat-option *ngFor="let environment of environments" [value]="environment.id">
+                            {{environment.name}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -28,12 +28,70 @@
                 <mat-form-field style="width: 100%;" appearance="outline">
                     <mat-label>Solution</mat-label>
                     <mat-select>
-                        <mat-option *ngFor="let food of foods" [value]="food.value">
-                            {{food.viewValue}}
+                        <mat-option *ngFor="let solution of solutions" [value]="solution.id">
+                            {{solution.name}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+                    <mat-radio-button class="example-radio-button" *ngFor='let pr of prs' [value]='pr'>
+                        {{pr}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <button type="button" (click)="showForm()" style="display: block;" class="btn btn-secondary">add Maitenance</button>
+            </div>
+        </div>
+        <br>
+        <ng-container *ngIf="addForm">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Create Maitenance</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <mat-form-field style="width: 100%;" appearance="outline">
+                                        <mat-label>System</mat-label>
+                                        <mat-select>
+                                            <mat-option *ngFor="let system of systems" [value]="system.id">{{system.name}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Choose a date</mat-label>
+                                        <input matInput [matDatepicker]="picker">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker touchUi #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <!-- <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Choose a date</mat-label>
+                                        <input matInput [matDatepicker]="picker">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker touchUi #picker></mat-datepicker>
+                                    </mat-form-field> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
     </div>
+
 </div>
