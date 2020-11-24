@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
-import { Company } from '../service/company.service';
+import { Company, System } from '../service/company.service';
 import {Chart} from 'chart.js';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 
 @Component({
@@ -21,15 +23,27 @@ export class CompanyDetailComponent implements OnInit, AfterViewInit {
   @ViewChild('line3') line3;
   @ViewChild('line4') line4;
 
+  displayedColumns: string[] = ['id', 'name', 'ip', 'hostname', 'actions'];
+  dataSource: MatTableDataSource<System>;
+  systems: System[] = [];
+  @ViewChild(MatSort) sort: MatSort;
+
   constructor() { }
 
   ngOnInit(): void {
     console.log('compñias');
-    console.log(this.company);
-    //this.displayChart();
+    console.log(this.company.systems);
+    this.systems = this.company.systems;
+    this.dataSource = new MatTableDataSource(this.systems);
   }
   ngAfterViewInit() {
     this.displayChart();
+    this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   displayChart() {

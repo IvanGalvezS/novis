@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-header">
+        <h1>Maintenance</h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-4">
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Company</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let company of companies" [value]="company.id">
+                            {{company.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4">
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Environment</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4">
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Solution</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>

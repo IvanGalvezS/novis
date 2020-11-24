@@ -8,6 +8,9 @@ import {MatTableModule} from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CompanyDetailComponent } from './company-detail/company-detail.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [CompanyComponent, CompanyListComponent, CompanyDetailComponent],
@@ -17,6 +20,9 @@ import { CompanyDetailComponent } from './company-detail/company-detail.componen
     MatTableModule,
     MatTooltipModule,
     MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule
 
   ]
 })
