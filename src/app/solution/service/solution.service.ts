@@ -9,11 +9,20 @@ export interface Solution {
   name: string;
   description: string;
 }
+export interface Technology {
+  id: number;
+  name: string;
+  solutionId: number;
+}
 @Injectable({
   providedIn: 'root'
 })
 export class SolutionService {
-
+  technologies: Technology[] = [
+    {id: 1, name: 'Abap', solutionId:1},
+    {id: 2, name: 'Java', solutionId:1},
+    {id: 3, name: 'Dual', solutionId:2}
+  ];
   constructor() { }
 
   getEnviroments() {
@@ -33,5 +42,9 @@ export class SolutionService {
       {id: 2, name: 'SCM', description: 'SCM des'}
     ];
     return solutions;
+  }
+
+  getTechnolyBySolution(solutionId: number) {
+    return this.technologies.filter(tech => tech.solutionId === solutionId);
   }
 }

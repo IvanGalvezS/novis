@@ -1,26 +1,104 @@
 <div class="card">
     <div class="card-header">
-        <h1 class="card-title">System</h1>
+        <div class="row">
+            <div class="col-sm-10">
+                <h1 class="card-title">System</h1>
+            </div>
+            <div class="col-sm-2">
+                <button mat-button (click)="goBack()" class="btn btn-block btn-outline-secondary"><mat-icon>arrow_back</mat-icon> Back</button>
+            </div>
+        </div>
     </div>
     <div class="card-body">
         <div class="row">
+            <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 <mat-form-field class="full-with-form" appearance="outline">
                     <mat-label>System name</mat-label>
                     <input matInput>
                 </mat-form-field>
             </div>
+            <div class="col-sm-2"></div>
         </div>
         <div class="row">
+            <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 <mat-form-field class="full-with-form" appearance="outline">
-                    <mat-label>Solution</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let solution of solutions" [value]="solution.id">
+                    <mat-label>Solution type</mat-label>
+                    <mat-select (selectionChange)="changeTechnology($event.value)">
+                        <mat-option *ngFor="let solution of solutions" [value]="solution">
                             {{solution.name}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <mat-form-field class="full-with-form" appearance="outline">
+                    <mat-label>Soution name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm"></div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">
+            NETWEAVER
+        </h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <mat-form-field class="full-with-form" appearance="outline">
+                    <mat-label>Technology</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let technology of technologies" [value]="technology">
+                            {{technology.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <mat-form-field class="full-with-form" appearance="outline">
+                    <mat-label>Enviroment</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let enviroment of enviroments" [value]="enviroments">
+                            {{enviroment.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <br>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-outline-danger btn-block">Cancel</button>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-outline-warning btn-block" (click)="openSnackBar()">Save</button>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-outline-success btn-block">Next</button>
+                </div>
+                <div class="col-sm-3"></div>
             </div>
         </div>
     </div>

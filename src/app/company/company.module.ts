@@ -13,6 +13,9 @@ import {MatInputModule} from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { CompanySystemComponent } from './company-system/company-system.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 
@@ -28,6 +31,8 @@ import { CompanySystemComponent } from './company-system/company-system.componen
     MatInputModule,
     MatIconModule,
     MatSelectModule,
+    MatDividerModule,
+    MatButtonModule,
   ]
 })
 export class CompanyModule { }

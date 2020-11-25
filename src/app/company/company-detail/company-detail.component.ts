@@ -45,11 +45,13 @@ export class CompanyDetailComponent implements OnInit, AfterViewInit {
   }
 
   openSystemView() {
-    console.log('open view');
-    const navigatorObj: NavigatorObject = {component: 'system'}
+    const navigatorObj: NavigatorObject = {component: 'system', company: this.company}
     this.component.emit(navigatorObj);
   }
-
+  goBack() {
+    const navigatorObj: NavigatorObject = {component: 'list'}
+    this.component.emit(navigatorObj);
+  }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

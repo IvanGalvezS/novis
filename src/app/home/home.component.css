@@ -1,0 +1,32 @@
+.dash-number {
+    font-size: 80px;
+    color: blue;
+    top: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.dash-label {
+    font-size: 20px;
+}
+
+.dash-label-alert {
+    margin-left: -50px;
+    margin-top: 20px;
+    font-size: 25px;
+    color: red;
+}
+
+.dash-label-warning {
+    margin-left: -50px;
+    margin-top: 20px;
+    font-size: 25px;
+    color: orange;
+}
+
+.dash-number-colu {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 40px;
+    color: grey;
+}

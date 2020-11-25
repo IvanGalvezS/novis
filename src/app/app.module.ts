@@ -12,6 +12,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatListModule} from "@angular/material/list";
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -31,7 +32,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSidenavModule,
     MatMenuModule,
     MatListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSnackBarModule,
 
   ],
   providers: [],
