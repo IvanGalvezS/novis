@@ -4,6 +4,14 @@
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
 
+#snav.menu-close {
+    width: 70px;
+}
+
+#snav.menu-open {
+    width: 300px;
+}
+
 .example-icon {
     padding: 0 14px;
 }
@@ -26,7 +34,7 @@
 /* //contenido menu */
 
 .example-side-menu {
-    width: 300px;
+    width: 250px;
 }
 
 .example-is-mobile .example-toolbar {
@@ -51,7 +59,6 @@ h1.example-app-name {
     flex: 1 0 auto;
 }
 
-//////////////
 .draw-container {
     width: 100%;
 }

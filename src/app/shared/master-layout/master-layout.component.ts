@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./master-layout.component.css']
 })
 export class MasterLayoutComponent implements OnInit {
-
+  isMenuOpen = true;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  onToolBarMenu() {
+    console.log(this.isMenuOpen);
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
