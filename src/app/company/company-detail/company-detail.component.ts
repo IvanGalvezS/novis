@@ -1,8 +1,9 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Company, System } from '../service/company.service';
 import {Chart} from 'chart.js';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { NavigatorObject } from '../../interfaces/navigator-object';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./company-detail.component.css']
 })
 export class CompanyDetailComponent implements OnInit, AfterViewInit {
+
+  @Output() component = new EventEmitter<NavigatorObject>();
   @Input() company: Company;
   
   chart1: any;
@@ -39,6 +42,12 @@ export class CompanyDetailComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.displayChart();
     this.dataSource.sort = this.sort;
+  }
+
+  openSystemView() {
+    console.log('open view');
+    const navigatorObj: NavigatorObject = {component: 'system'}
+    this.component.emit(navigatorObj);
   }
 
   applyFilter(event: Event) {

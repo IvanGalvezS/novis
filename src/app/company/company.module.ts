@@ -11,9 +11,13 @@ import { CompanyDetailComponent } from './company-detail/company-detail.componen
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { CompanySystemComponent } from './company-system/company-system.component';
+
+
 
 @NgModule({
-  declarations: [CompanyComponent, CompanyListComponent, CompanyDetailComponent],
+  declarations: [CompanyComponent, CompanyListComponent, CompanyDetailComponent, CompanySystemComponent],
   imports: [
     CommonModule,
     CompanyRoutingModule,
@@ -22,8 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
-
+    MatIconModule,
+    MatSelectModule,
   ]
 })
 export class CompanyModule { }

@@ -17,6 +17,7 @@ export class CompanyComponent implements OnInit {
   }
 
   onChangeComponent(navigatorObj: NavigatorObject) {
+    console.log('ejecutando ', navigatorObj)
     this.component = navigatorObj.component;
     if (navigatorObj.company) {
       this.company = navigatorObj.company;

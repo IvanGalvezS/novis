@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">System</h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-8">
+                <mat-form-field class="full-with-form" appearance="outline">
+                    <mat-label>System name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <mat-form-field class="full-with-form" appearance="outline">
+                    <mat-label>Solution</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let solution of solutions" [value]="solution.id">
+                            {{solution.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>

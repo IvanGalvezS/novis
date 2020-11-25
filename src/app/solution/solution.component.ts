@@ -15,6 +15,7 @@ export class SolutionComponent implements OnInit {
   solutions: Solution[] = [];
   prs: string[] = ['PR8-DB', 'PR8-ACS', 'PR8-DI'];
   addForm = false;
+  checked = false;
   constructor(private companyService: CompanyService, private solutionService: SolutionService) { }
 
   ngOnInit(): void {

@@ -30,7 +30,7 @@ export class SolutionService {
   getSolutions() {
     const solutions: Solution[] = [
       {id: 1, name: 'ERP', description: 'ERP des'},
-      {id: 2, name: 'ERP 2', description: 'ERP2 des'}
+      {id: 2, name: 'SCM', description: 'SCM des'}
     ];
     return solutions;
   }
