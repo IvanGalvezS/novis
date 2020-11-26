@@ -3,6 +3,8 @@ import { SolutionService, Solution, Technology, Enviroment } from '../../solutio
 import { NavigatorObject } from '../../interfaces/navigator-object';
 import { Company } from '../service/company.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-company-system',
@@ -47,6 +49,27 @@ export class CompanySystemComponent implements OnInit {
   }
   getEnviroments() {
     this.enviroments = this.solutionService.getEnviroments();
+  }
+
+  cancel() {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Data will be lost and you will be redirected",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.goBack();
+        // Swal.fire(
+        //   'Deleted!',
+        //   'Your file has been deleted.',
+        //   'success'
+        // )
+      }
+    })
   }
 
 }
