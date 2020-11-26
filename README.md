@@ -14,3 +14,11 @@ Run npm install
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Puntos documento y desarrollo.
+
+* Punto 1 - Creación vista Home status: ok
+* Punto 2 - Creación vista lista compañias status: ok
+* Punto 3 - Creación vista Monitoreo status: ok
+* Punto 4 - Creación vista lista de sistemas status: ok
+* Punto 5 - Creación vista formulario crear sistema status: ok
+* Punto 6 - Creación vista mantenimiento status: ok
